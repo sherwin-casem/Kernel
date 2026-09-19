@@ -20,6 +20,6 @@ backends = [
 ]
 
 [general.hub]
-repo-id = "bassrehab/moe-dispatch"
+repo-id = "sherwin-casem/moe-dispatch"
 
 [torch-noarch]

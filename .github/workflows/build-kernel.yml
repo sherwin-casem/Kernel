@@ -1,7 +1,7 @@
 name: Build MoE dispatch kernel
 
 # Builds the universal (pure-Triton) moe_dispatch kernel on Hugging Face Jobs
-# and uploads it to bassrehab/moe-dispatch. Offloading to HF Jobs keeps the
+# and uploads it to sherwin-casem/moe-dispatch. Offloading to HF Jobs keeps the
 # Nix builder off GitHub's runners (see the HF Kernels GitHub Actions guide).
 #
 # Requires a repository secret HF_TOKEN with `job.write` + write access.
@@ -26,7 +26,7 @@ jobs:
         uses: huggingface/kernel-builder-job@main
         with:
           token: ${{ secrets.HF_TOKEN }}
-          namespace: bassrehab
+          namespace: sherwin-casem
           flavor: cpu-xl
           timeout: "21600"
           script: |
@@ -46,4 +46,4 @@ jobs:
             nix run github:huggingface/kernels#kernel-builder -- build-and-upload \
               --max-jobs 4 \
               --cores 8 \
-              --repo-id bassrehab/moe-dispatch
+              --repo-id sherwin-casem/moe-dispatch

@@ -9,8 +9,8 @@ validates the published kernel end to end.
 import torch
 from kernels import get_kernel
 
-# trust_remote_code=True is required until bassrehab is a trusted publisher.
-w4a16 = get_kernel("bassrehab/w4a16", version=1, trust_remote_code=True)
+# trust_remote_code=True is required until sherwin-casem is a trusted publisher.
+w4a16 = get_kernel("sherwin-casem/w4a16", version=1, trust_remote_code=True)
 
 K, N, G, M = 4096, 512, 128, 8
 packed, scales, zeros = w4a16.quantize_weight_int4_grouped(torch.randn(K, N) * 0.1, G)

@@ -31,7 +31,7 @@ import torch
 from kernels import get_kernel
 
 # trust_remote_code=True is required until the publisher is on the trusted list.
-w4a16 = get_kernel("bassrehab/w4a16", version=1, trust_remote_code=True)
+w4a16 = get_kernel("sherwin-casem/w4a16", version=1, trust_remote_code=True)
 
 K, N, group_size = 4096, 14336, 128
 weight = torch.randn(K, N)                    # FP16-range weights to quantize (CPU ok)
@@ -68,4 +68,4 @@ zero) and symmetric (fixed zero 8) quantization.
 
 **Version 1.** Load with `version=1`. Correctness validated on A100 (30/30). The full
 memory-bandwidth roofline win needs a Marlin-style layout (future work). Source, roofline
-analysis, and writeup: <https://github.com/bassrehab/triton-kernels>.
+analysis, and writeup: <https://github.com/sherwin-casem/triton-kernels>.

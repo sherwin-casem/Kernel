@@ -1,12 +1,12 @@
 # Triton Forge
 
-[![Build](https://github.com/bassrehab/triton-kernels/actions/workflows/build-w4a16.yml/badge.svg?branch=main)](https://github.com/bassrehab/triton-kernels/actions/workflows/build-w4a16.yml)
+[![Build](https://github.com/sherwin-casem/triton-kernels/actions/workflows/build-w4a16.yml/badge.svg?branch=main)](https://github.com/sherwin-casem/triton-kernels/actions/workflows/build-w4a16.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white)
 ![PyTorch 2.1+](https://img.shields.io/badge/PyTorch-2.1+-ee4c2c.svg?logo=pytorch&logoColor=white)
 ![Triton 3.0+](https://img.shields.io/badge/Triton-3.0+-8A2BE2.svg)
 ![GPU: NVIDIA | AMD](https://img.shields.io/badge/GPU-NVIDIA%20%7C%20AMD-76B900.svg)
-[![Hugging Face Kernels](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Kernels-FFD21E.svg)](https://huggingface.co/kernels/bassrehab/moe-dispatch)
+[![Hugging Face Kernels](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Kernels-FFD21E.svg)](https://huggingface.co/kernels/sherwin-casem/moe-dispatch)
 
 Fast GPU kernels for LLM inference, built in [OpenAI Triton](https://triton-lang.org/) to keep the memory bus busy and the latency low.
 
@@ -33,27 +33,19 @@ Custom kernels help by:
 | [`fused_moe_forward`](triton_kernels/moe/fused_moe.py) | Fused MoE dispatch (router + experts) | **up to 9.1x** |
 | [`w4a16_gemm`](triton_kernels/w4a16.py) | W4A16 4-bit weight-only GEMM (GPTQ/AWQ) | **1.2-1.3x vs FP16 (decode)**, 4x less weight memory |
 
-## On the Hugging Face Kernel Hub
-
-Two kernels are published on the [Hugging Face Kernel Hub](https://huggingface.co/kernels)
-as cross-platform universal (pure-Triton) kernels, loadable directly with no install:
-
-- **[bassrehab/moe-dispatch](https://huggingface.co/kernels/bassrehab/moe-dispatch)** - fused MoE dispatch (router + top-k gating + grouped expert GEMM), validated on NVIDIA A100 and AMD MI300X.
-- **[bassrehab/w4a16](https://huggingface.co/kernels/bassrehab/w4a16)** - 4-bit weight-only GEMM that beats cuBLAS FP16 in the decode regime (1.2-1.3x), validated on A100.
-
 ```python
 from kernels import get_kernel
 
 # trust_remote_code=True is required until the publisher is on the trusted list
-moe = get_kernel("bassrehab/moe-dispatch", version=1, trust_remote_code=True)
-w4a16 = get_kernel("bassrehab/w4a16", version=1, trust_remote_code=True)
-```
+moe = get_kernel("sherwin-casem/moe-dispatch", version=1, trust_remote_code=True)
+w4a16 = get_kernel("sherwin-casem/w4a16", version=1, trust_remote_code=True)
+``` 
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/bassrehab/triton-kernels.git
+git clone https://github.com/sherwin-casem/triton-kernels.git
 cd triton-kernels
 
 # Install in development mode
@@ -309,9 +301,6 @@ pytest tests/ --cov=triton_kernels
 - [Mixtral of Experts (Jiang et al.)](https://arxiv.org/abs/2401.04088) - Sparse MoE architecture
 - [DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437) - 256-expert MoE with sigmoid gating
 
-## Author
-
-**Subhadip Mitra** - [contact@subhadipmitra.com](mailto:contact@subhadipmitra.com)
 
 ## License
 

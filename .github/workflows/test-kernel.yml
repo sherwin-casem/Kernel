@@ -1,6 +1,6 @@
 name: Test MoE dispatch kernel
 
-# Pulls the published bassrehab/moe-dispatch kernel from the Hub and runs a
+# Pulls the published sherwin-casem/moe-dispatch kernel from the Hub and runs a
 # forward pass on an HF Jobs GPU. Run this AFTER the build workflow so the Hub
 # has fresh artifacts to pull.
 #
@@ -23,7 +23,7 @@ jobs:
         uses: huggingface/hf-jobs-action@main
         with:
           token: ${{ secrets.HF_TOKEN }}
-          namespace: bassrehab
+          namespace: sherwin-casem
           flavor: l4x1
           image: ghcr.io/astral-sh/uv:python3.11-bookworm
           timeout: "3600"

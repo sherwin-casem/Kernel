@@ -1,7 +1,7 @@
 name: Build W4A16 kernel
 
 # Builds the universal (pure-Triton) w4a16 kernel on Hugging Face Jobs and uploads it to
-# bassrehab/w4a16. Offloading to HF Jobs keeps the Nix builder off GitHub's runners.
+# sherwin-casem/w4a16. Offloading to HF Jobs keeps the Nix builder off GitHub's runners.
 #
 # Requires a repository secret HF_TOKEN with `job.write` + write access.
 
@@ -25,7 +25,7 @@ jobs:
         uses: huggingface/kernel-builder-job@main
         with:
           token: ${{ secrets.HF_TOKEN }}
-          namespace: bassrehab
+          namespace: sherwin-casem
           flavor: cpu-xl
           timeout: "21600"
           script: |
@@ -45,4 +45,4 @@ jobs:
             nix run github:huggingface/kernels#kernel-builder -- build-and-upload \
               --max-jobs 4 \
               --cores 8 \
-              --repo-id bassrehab/w4a16
+              --repo-id sherwin-casem/w4a16

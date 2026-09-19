@@ -30,7 +30,7 @@ from kernels import get_kernel
 
 # trust_remote_code=True is required until the publisher is on the Hub
 # trusted-publisher list.
-moe = get_kernel("bassrehab/moe-dispatch", version=1, trust_remote_code=True)
+moe = get_kernel("sherwin-casem/moe-dispatch", version=1, trust_remote_code=True)
 
 num_tokens, hidden, ffn, num_experts, top_k = 4096, 4096, 14336, 8, 2
 dev, dtype = "cuda", torch.float16
@@ -91,4 +91,4 @@ version; pin an explicit `revision` if you need bit-for-bit reproducibility.
   Expert Routing Without CUDA.* [arXiv:2605.23911](https://arxiv.org/abs/2605.23911)
 - **Deep-dive:** [Fused MoE Dispatch in Triton](https://subhadipmitra.com/blog/2026/fused-moe-dispatch-triton/)
   - design decisions and roofline analysis
-- **Source & benchmarks:** <https://github.com/bassrehab/triton-kernels>
+- **Source & benchmarks:** <https://github.com/sherwin-casem/triton-kernels>

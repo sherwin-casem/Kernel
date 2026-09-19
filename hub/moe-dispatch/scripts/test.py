@@ -10,8 +10,8 @@ to end (not the local source tree).
 import torch
 from kernels import get_kernel
 
-# trust_remote_code=True is required until bassrehab is a trusted publisher.
-moe = get_kernel("bassrehab/moe-dispatch", version=1, trust_remote_code=True)
+# trust_remote_code=True is required until sherwin-casem is a trusted publisher.
+moe = get_kernel("sherwin-casem/moe-dispatch", version=1, trust_remote_code=True)
 
 nt, h, f, ne, tk = 64, 256, 512, 8, 2
 dev, dt = "cuda", torch.float16

@@ -15,6 +15,6 @@ backends = [
 ]
 
 [general.hub]
-repo-id = "bassrehab/w4a16"
+repo-id = "sherwin-casem/w4a16"
 
 [torch-noarch]

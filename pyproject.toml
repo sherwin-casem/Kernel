@@ -44,8 +44,8 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/bassrehab/triton-kernels"
-Repository = "https://github.com/bassrehab/triton-kernels"
+Homepage = "https://github.com/sherwin-casem/triton-kernels"
+Repository = "https://github.com/sherwin-casem/triton-kernels"
 
 [tool.setuptools.packages.find]
 where = ["."]
