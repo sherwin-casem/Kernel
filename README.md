@@ -1,4 +1,4 @@
-# Triton Kernels
+# Triton Forge
 
 [![Build](https://github.com/bassrehab/triton-kernels/actions/workflows/build-w4a16.yml/badge.svg?branch=main)](https://github.com/bassrehab/triton-kernels/actions/workflows/build-w4a16.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -8,7 +8,7 @@
 ![GPU: NVIDIA | AMD](https://img.shields.io/badge/GPU-NVIDIA%20%7C%20AMD-76B900.svg)
 [![Hugging Face Kernels](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Kernels-FFD21E.svg)](https://huggingface.co/kernels/bassrehab/moe-dispatch)
 
-High-performance GPU kernels for LLM inference, implemented in [OpenAI Triton](https://triton-lang.org/).
+Fast GPU kernels for LLM inference, built in [OpenAI Triton](https://triton-lang.org/) to keep the memory bus busy and the latency low.
 
 This repository provides educational, well-documented implementations of common transformer operations optimized for inference. Each kernel includes roofline analysis explaining *why* the optimization works at the hardware level.
 

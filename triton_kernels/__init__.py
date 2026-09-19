@@ -1,5 +1,5 @@
 """
-triton-kernels: High-performance GPU kernels for LLM inference using OpenAI Triton.
+triton-kernels: Fast GPU kernels for LLM inference with OpenAI Triton.
 
 This package provides fused and optimized kernels for common transformer operations.
 """
